@@ -86,7 +86,7 @@ if __name__ == "__main__":
             if item in lines:
                 lines.remove(item)
 
-    for item in tqdm(lines):
+    for item in tqdm(lines, ncols=60):
         country, city, vid = item.split("+")
         save_dir = os.path.join(args.save_dir, country, city)
         if not os.path.exists(save_dir):
